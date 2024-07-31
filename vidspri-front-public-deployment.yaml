@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vifdspri-website-deployment
+  labels:
+    app: vifdspri-website-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vifdspri-website-front-public
+  template:
+    metadata:
+      labels:
+        app: vifdspri-website-front-public
+    spec:
+      containers:
+      - name: vifdspri-website-front-public
+        image: europe-west9-docker.pkg.dev/vifdspri-website/front-public-repo/front-public-image:latest
+        ports:
+        - containerPort: 3000
