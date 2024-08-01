@@ -18,3 +18,4 @@ spec:
         image: europe-west9-docker.pkg.dev/vifdspri-website/front-public-repo/front-public-image:latest
         ports:
         - containerPort: 3000
+          name: next-server
