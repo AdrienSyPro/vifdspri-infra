@@ -7,11 +7,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: vifdspri-website-front-public
+      app.kubernetes.io/name: vifdspri-website
   template:
     metadata:
       labels:
-        app: vifdspri-website-front-public
+        app.kubernetes.io/name: vifdspri-website
     spec:
       containers:
       - name: vifdspri-website-front-public
