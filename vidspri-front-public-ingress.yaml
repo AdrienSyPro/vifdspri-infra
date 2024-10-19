@@ -4,14 +4,20 @@ metadata:
   name: vifdspri-website-ingress
   annotations:
     kubernetes.io/ingress.class: gce
+    networking.gke.io/managed-certificates: "vifdspri-certificate"
+
 spec:
+  tls:
+  - hosts:
+    - adrien-sy.dev
   defaultBackend:
     service:
       name: vifdspri-website-service
       port:
         number: 80
   rules:
-  - http:
+  - host: adrien-sy.dev
+    http:
       paths:
       - path: /
         pathType: Prefix
